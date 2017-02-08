@@ -11,7 +11,7 @@ var React = require("react");
 //siden denne funksjonen ikke innholder noen State, kan man bruke denne syntaxen
 var About =  (props) =>{
     return (
-        <h3> About component</h3>
+        <h3> About cooomponent</h3>
     )
 }
 
