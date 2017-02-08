@@ -22,7 +22,7 @@ var WeatherForm = React.createClass({
                 {/*Hver gang man trykker på knappen, blir onFormSubmit kalt*/}
                 <form onSubmit={this.onFormSubmit}>
                     <div>
-                        <input type="text" placeholder="Enter name" ref="location"/>
+                        <input type="text" placeholder="Enter city" ref="location"/>
                     </div>
                     <button>Get Weather</button>
                 </form>
