@@ -11,8 +11,11 @@ var React = require("react");
 //siden denne funksjonen ikke innholder noen State, kan man bruke denne syntaxen
 var About =  (props) =>{
     return (
-        <h3> About cooomponent</h3>
-    )
+        <div>
+        <h3> About </h3>
+        <p> Test</p>
+        </div>
+            )
 }
 
 module.exports = About;
