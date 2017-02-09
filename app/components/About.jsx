@@ -14,7 +14,7 @@ var About =  (props) =>{
         // må ha div her fordi React can bare returnere en root component
 
             <div>
-                <h1 className="text-center"> About </h1>
+                <h1 className="text-center page-title"> About </h1>
                 <p> This is a simple weather application made by Gard Engen</p>
                 <ol>
                     <li>
