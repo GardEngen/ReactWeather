@@ -17,9 +17,10 @@ var Weather = React.createClass({
         var that = this;
 
         this.setState({
-            isLoading:true,
+            isLoading: true,
             errorMessage: undefined
         });
+
         openWeatherMap.getTemp(location).then(function (temp) {
             that.setState({
             location: location,
@@ -33,18 +34,15 @@ var Weather = React.createClass({
                     errorMessage: e.message
 
                 });
-                debugger;
-            }
-
-        );
+            });
     },
     render: function () {
         //henter ut verdiene man kan også skrive (ES-destruction)
-       // var {temp, location} = this.state;
-        var temp = this.state.temp;
-        var location = this.state.location;
-        var isLoading = this.state.isLoading;
-        var errorMessage = this.state.errorMessage;
+        var {temp, location,isLoading,errorMessage} = this.state;
+        // var temp = this.state.temp;
+        // var location = this.state.location;
+        // var isLoading = this.state.isLoading;
+        // var errorMessage = this.state.errorMessage;
 
 
         function renderMessage(){

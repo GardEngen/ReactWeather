@@ -12,8 +12,10 @@ var WeatherForm = React.createClass({
         //check if info is valid
 
         if(location.length > 0 ){
+
             this.refs.location.value = "";
             this.props.onSearch(location);
+
         }
     },
     render: function () {
