@@ -18,7 +18,9 @@ var Weather = React.createClass({
 
         this.setState({
             isLoading: true,
-            errorMessage: undefined
+            errorMessage: undefined,
+            location : undefined,
+            temp: undefined
         });
 
         openWeatherMap.getTemp(location).then(function (temp) {
@@ -35,6 +37,29 @@ var Weather = React.createClass({
 
                 });
             });
+    },
+    //Denne komponenten kjøres når komponenten har blitt mounta i browseren. Dette fører til at vi kan kalle
+    //forskjellige funksjonen som blir automastisk kjørt når kompnenten lastes inn
+    componentDidMount: function(){
+        //Dette er en funksjon i render som gjør at vi kan hente ut location fra URL.
+        var location = this.props.location.query.location;
+
+        if(location && location.length > 0 ){
+            this.handleSearch(location);
+            //Denne kommandoen vil tilbakestille URL til standard.
+            window.location.hash = "#/";
+        }
+
+    },
+    //denne funksjonen vil bli kalt hver gang en Prop blir oppdatert
+    componentWillReceiveProps: function(newProps) {
+        var location = newProps.location.query.location;
+
+        if(location && location.length > 0 ){
+            this.handleSearch(location);
+            //Denne kommandoen vil tilbakestille URL til standard.
+            window.location.hash = "#/";
+        }
     },
     render: function () {
         //henter ut verdiene man kan også skrive (ES-destruction)
